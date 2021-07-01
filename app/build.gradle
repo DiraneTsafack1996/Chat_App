@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion '30.0.3'
+    defaultConfig {
+        applicationId "com.app.sample.fchat" // l'identifiant qui travaille avec firebase à voir dans le dossier app/google-service.json
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    //libraries we need for now
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.3.0' //material c'est pour implementer le design de Google(Button, Text, Image...)
+    implementation 'com.google.firebase:firebase-auth:21.0.1' // implemente l'Authentification dans firebase
+    implementation 'com.google.firebase:firebase-database:20.0.0' // implemente firebase RealTimeDatabase
+    implementation 'com.google.firebase:firebase-core:19.0.0' // implement le coeur de fire base (certains fonctions nécessaires au bon fonctionnement)
+    //add this
+    implementation 'com.google.firebase:firebase-storage:20.0.0' // pour sauvegarder les photo/image....
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+    //add this library and this
+    implementation 'de.hdodenhof:circleimageview:2.2.0' //permet de mettre le profile en image circulaire
+    implementation 'com.github.bumptech.glide:glide:4.8.0' // permet d'afficher l'image qu'il reçoit par URL
+
+    //add these libraries
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.google.firebase:firebase-messaging:22.0.0' // pour les notification avec firebase
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
+apply plugin: 'com.google.gms.google-services'
+repositories {
+    mavenCentral()
+}
