@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "525134258949",
+    "firebase_url": "https://test-ed70c-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "test-ed70c",
+    "storage_bucket": "test-ed70c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525134258949:android:5677268b93d40bda6f8d6c",
+        "android_client_info": {
+          "package_name": "com.app.sample.fchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "525134258949-ohk4r027g36919ei2kcahsk87b6ic0p9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmd7A9O2IpYkKRSbdDlH1_2QupoHA4f9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "525134258949-ohk4r027g36919ei2kcahsk87b6ic0p9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
